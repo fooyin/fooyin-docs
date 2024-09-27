@@ -37,13 +37,13 @@ Control
    * - **Function**
      - **Description**
    * - $longer(str1,str2)
-     - Returns `true` if `str1` is longer than `str2`, otherwise `false`
+     - Returns `true` if `str1` is longer than `str2`
    * - $if(cond,then)
-     - Evaluates the condition `cond`; returns `then` if true, otherwise `false`
+     - Returns `then` if `cond` is true
    * - $if(cond,then,else)
-     - Evaluates the condition `cond`; returns `then` if true, otherwise `else`
+     - Returns `then` if `cond` is true, otherwise `else`
    * - $if2(expr,else)
-     - Evaluates the expression `expr`; returns `expr` if true, otherwise returns `else`
+     - Returns `expr` if it evaluates to true, otherwise returns `else`
    * - $ifgreater(x,y,then,else)
      - Returns `then` if `x` is greater than `y`, otherwise `else`
    * - $iflonger(str1,str2,then,else)
