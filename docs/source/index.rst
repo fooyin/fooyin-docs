@@ -1,10 +1,9 @@
-Welcome to Lumache's documentation!
+Welcome to fooyins's documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**fooyin** is a music player built around customisation.
+It provides a variety of widgets to help you manage and play your local collection.
+It's highly extensible with a plugin system and includes FooScript, a scripting language for advanced configuration of widgets.
 
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
