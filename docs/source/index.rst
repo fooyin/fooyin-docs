@@ -15,6 +15,17 @@ It's highly extensible with a plugin system and includes FooScript, a scripting 
 .. toctree::
    :hidden:
    :maxdepth: 1
+   :caption: Getting Starting
+
+   quick-start/introduction
+   quick-start/adding-files
+   quick-start/interface
+   quick-start/layout-editing-mode
+   quick-start/importing-exporting-layouts
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
    :caption: Scripting
 
    scripting/basics
