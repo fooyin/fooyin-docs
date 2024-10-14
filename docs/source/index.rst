@@ -32,3 +32,10 @@ It's highly extensible with a plugin system and includes FooScript, a scripting 
    scripting/variables
    scripting/functions
    scripting/formatting
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: Searching
+
+   searching/basics
