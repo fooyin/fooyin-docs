@@ -83,6 +83,19 @@ The following list of variables can be used anywhere:
      - Absolute path to the directory of the file
    * - %subsong%
      - Subsong index - used for multi-track files
+   * - %replaygain_track_gain%
+     - ReplayGain track gain value
+   * - %replaygain_track_peak%
+     - ReplayGain track peak value
+   * - %replaygain_track_peak_db%
+     - ReplayGain track peak value in decibels 
+   * - %replaygain_album_gain%
+     - ReplayGain album gain value
+   * - %replaygain_album_peak%
+     - ReplayGain album peak value
+   * - %replaygain_album_peak_db%
+     - ReplayGain album peak value in decibels 
+  
 
 The following list of variables can be used in the status bar:
 
