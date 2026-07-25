@@ -1,7 +1,7 @@
 Searching
 =======================
 
-Advanced searching can be carried out using a case-insensitive query-based language. It builds on the normal scripting syntax, offering more advanced filtering capabilities with operators, keywords, and logical grouping.
+Advanced searching can be carried out using a case-insensitive query-based language. It builds on the normal scripting syntax, offering more advanced filtering capabilities with operators, keywords, and logical grouping. The same query language is used to define autoplaylists.
 
 Operators
 ----------
@@ -100,6 +100,34 @@ Keywords allow more complex filtering by defining conditions, grouping expressio
    * - `SORT DESCENDING BY`  
      - `SORT DESCENDING BY expression`  
      - Sort tracks in descending order by the given expression  
+   * - `SORT+`
+     - `SORT+ expression`
+     - Shorthand for `SORT ASCENDING BY expression`
+   * - `SORT-`
+     - `SORT- expression`
+     - Shorthand for `SORT DESCENDING BY expression`
+   * - `LIMIT`
+     - `LIMIT number`
+     - Return no more than the given number of tracks
+
+Sort Shorthand
+--------------
+
+The `+` and `-` suffixes provide compact forms for choosing the sort direction:
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Shorthand
+     - Equivalent long form
+   * - `SORT+ playcount`
+     - `SORT ASCENDING BY playcount`
+   * - `SORT- playcount`
+     - `SORT DESCENDING BY playcount`
+
+The expression after `SORT+` or `SORT-` can be any supported scripting
+expression, just as it can with the long forms.
 
 Grouping Expressions
 ---------------------
@@ -135,3 +163,22 @@ Examples
 3. Tracks released since 2020, sorted by play count in descending order:
 
     `date SINCE 2020 SORT DESCENDING BY %playcount%`
+
+4. The 25 most-played tracks:
+
+    `playcount > 0 SORT DESCENDING BY %playcount% LIMIT 25`
+
+Autoplaylists
+-------------
+
+Autoplaylists use the same filtering language in their **Query** field, including
+the `LIMIT` keyword. For example, this query keeps an autoplaylist to 25 tracks:
+
+`playcount > 0 LIMIT 25`
+
+Use the autoplaylist's **Sort** field to choose which matching tracks are retained
+when a limit is applied. For the 25 most-played tracks, enter
+`playcount > 0 LIMIT 25` in **Query** and `SORT- playcount` in **Sort**.
+Here, `SORT- playcount` is shorthand for
+`SORT DESCENDING BY playcount`, so the tracks with the highest play counts are
+retained.
