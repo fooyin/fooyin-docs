@@ -1,0 +1,7 @@
+/*
+ * The Read the Docs theme defaults to an 800px content column, which is too
+ * narrow for the reference tables used throughout these docs.
+ */
+.wy-nav-content {
+    max-width: 1200px;
+}
