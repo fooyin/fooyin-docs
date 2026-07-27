@@ -8,6 +8,7 @@ Numeric
 -------
 
 .. list-table::
+   :class: scripting-functions
    :widths: 35 65
    :header-rows: 1
 
@@ -40,6 +41,7 @@ String
 ------
 
 .. list-table::
+   :class: scripting-functions
    :widths: 35 65
    :header-rows: 1
 
@@ -126,6 +128,7 @@ Path
 ----
 
 .. list-table::
+   :class: scripting-functions
    :widths: 35 65
    :header-rows: 1
 
@@ -144,6 +147,7 @@ Utility
 -------
 
 .. list-table::
+   :class: scripting-functions
    :widths: 35 65
    :header-rows: 1
 
@@ -162,6 +166,7 @@ Time
 ----
 
 .. list-table::
+   :class: scripting-functions
    :widths: 35 65
    :header-rows: 1
 
@@ -184,6 +189,7 @@ Script variables
 These functions store and retrieve values during evaluation of a script.
 
 .. list-table::
+   :class: scripting-functions
    :widths: 35 65
    :header-rows: 1
 
@@ -200,6 +206,7 @@ Conditional
 -----------
 
 .. list-table::
+   :class: scripting-functions
    :widths: 35 65
    :header-rows: 1
 
@@ -230,6 +237,7 @@ Lookup
 ------
 
 .. list-table::
+   :class: scripting-functions
    :widths: 35 65
    :header-rows: 1
 

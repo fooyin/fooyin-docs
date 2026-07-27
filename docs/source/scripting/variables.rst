@@ -9,6 +9,7 @@ Metadata
 --------
 
 .. list-table::
+   :class: scripting-variables
    :widths: 25 75
    :header-rows: 1
 
@@ -129,6 +130,7 @@ Playlist
 --------
 
 .. list-table::
+   :class: scripting-variables
    :widths: 25 75
    :header-rows: 1
 
@@ -149,6 +151,7 @@ Queue
 -----
 
 .. list-table::
+   :class: scripting-variables
    :widths: 25 75
    :header-rows: 1
 
@@ -167,6 +170,7 @@ Playback
 These variables are available in playback-aware contexts such as the status bar.
 
 .. list-table::
+   :class: scripting-variables
    :widths: 25 75
    :header-rows: 1
 
@@ -193,6 +197,7 @@ Library and system
 ------------------
 
 .. list-table::
+   :class: scripting-variables
    :widths: 25 75
    :header-rows: 1
 
