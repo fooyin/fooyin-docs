@@ -8,5 +8,5 @@
 
 .rst-content table.scripting-variables tbody td:first-child code.literal,
 .rst-content table.scripting-functions tbody td:first-child code.literal {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
