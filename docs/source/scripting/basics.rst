@@ -1,5 +1,5 @@
-Scripting - Basics
-===================
+Basics
+======
 
 FooScript is a scripting language integrated into fooyin, offering advanced user configuration for many widgets. 
 This section will introduce you to the basics of FooScript, including function calls, variable usage, and basic formatting.

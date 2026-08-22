@@ -1,5 +1,5 @@
-Scripting - Formatting
-=======================
+Formatting
+==========
 
 FooScript also supports formatting tags which can be used to apply various properties to the output text. 
 Properties either extend to the end of the string, or until the matching closing tag. i.e. ``<b>Bold</b> Text``

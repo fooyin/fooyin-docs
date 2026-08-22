@@ -1,5 +1,5 @@
-Scripting - Functions
-=====================
+Functions
+=========
 
 FooScript functions manipulate strings, perform calculations, look up metadata,
 and control script evaluation.

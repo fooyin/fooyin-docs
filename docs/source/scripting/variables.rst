@@ -1,5 +1,5 @@
-Scripting - Variables
-=====================
+Variables
+=========
 
 Variable availability depends on the context in which a script is evaluated.
 Metadata variables require a track, while playlist, queue, playback, library, and
