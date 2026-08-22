@@ -31,6 +31,7 @@ It's highly extensible with a plugin system and includes FooScript, a scripting 
    scripting/basics
    scripting/variables
    scripting/functions
+   scripting/regular-expressions
    scripting/formatting
 
 .. toctree::
