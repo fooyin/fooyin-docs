@@ -9,11 +9,12 @@ Properties extend either to the end of the string or to the matching closing
 tag. For example, ``<b>Bold</b> Text`` applies bold formatting only to the word
 ``Bold``.
 
-.. list-table:: 
+.. list-table::
+   :class: scripting-formatting
    :widths: 20 80
    :header-rows: 1
 
-   * - **Function**
+   * - **Tag**
      - **Description**
    * - ``<b>``
      - **Bold**: Applies bold formatting to the text
