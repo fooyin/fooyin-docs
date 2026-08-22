@@ -40,6 +40,9 @@ Numeric
 String
 ------
 
+See :doc:`regular-expressions` for regex syntax, escaping, flags, captures,
+examples, and performance guidance.
+
 .. list-table::
    :class: scripting-functions
    :widths: 35 65
@@ -49,6 +52,14 @@ String
      - **Description**
    * - ``$replace(text,from,to,…)``
      - Replaces text fragments
+   * - ``$regex_match(text,"pattern"[,group[,flags]])``
+     - Returns the first match or capture; group ``0`` is the full match
+   * - ``$regex_matches(text,"pattern",separator[,group[,flags]])``
+     - Returns all matches or captures joined by ``separator``
+   * - ``$regex_replace(text,"pattern",replacement[,flags])``
+     - Replaces all matches of ``pattern``
+   * - ``$regex_test(text,"pattern"[,flags])``
+     - Tests whether ``pattern`` matches any part of ``text``
    * - ``$ascii(text)``
      - Converts text to ASCII
    * - ``$slice(text,start[,end])``
