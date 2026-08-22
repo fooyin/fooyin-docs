@@ -129,7 +129,7 @@ examples, and performance guidance.
    * - ``$urlencode(text)``
      - Percent-encodes text for use in URLs
    * - ``$crc32(text)``
-     - Returns the CRC-32 checksum of the UTF-8 ``text```
+     - Returns the CRC-32 checksum of ``text``
    * - ``$isalpha(text)``
      - Checks whether text contains only alphabetic characters
    * - ``$isalnum(text)``
