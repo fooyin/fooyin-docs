@@ -1,10 +1,13 @@
 Formatting
 ==========
 
-FooScript also supports formatting tags which can be used to apply various properties to the output text. 
-Properties either extend to the end of the string, or until the matching closing tag. i.e. ``<b>Bold</b> Text``
+FooScript supports formatting tags that apply visual properties to output text.
+Formatting can be used in most widgets that evaluate FooScript and display
+text. Support may vary depending on the widget and the property being used.
 
-These are currently only supported when used in the playlist:
+Properties extend either to the end of the string or to the matching closing
+tag. For example, ``<b>Bold</b> Text`` applies bold formatting only to the word
+``Bold``.
 
 .. list-table:: 
    :widths: 20 80
@@ -13,7 +16,7 @@ These are currently only supported when used in the playlist:
    * - **Function**
      - **Description**
    * - ``<b>``
-     - **Bold**: Applies bold formatting to the text up
+     - **Bold**: Applies bold formatting to the text
    * - ``<i>``
      - **Italic**: Applies italic formatting to the text
    * - ``<font=name>``
