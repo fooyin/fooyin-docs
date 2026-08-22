@@ -34,6 +34,8 @@ Numeric
      - Rounds a numeric value, optionally to the specified precision
    * - ``$num(value,length)``
      - Formats a number with leading zeroes
+   * - ``$hex(value,length)``
+     - Formats a number as uppercase hexadecimal, padded with leading zeroes to ``length`` digits
    * - ``$timems(milliseconds)``
      - Formats milliseconds as ``wk d HH:mm:ss``
 
