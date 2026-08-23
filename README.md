@@ -67,25 +67,6 @@ Build with warnings treated as errors before submitting changes:
 make -C docs html SPHINXOPTS="-W --keep-going"
 ```
 
-## Project Structure
-
-```text
-.
-├── .readthedocs.yaml       # Read the Docs build configuration
-├── docs/
-│   ├── Makefile            # Sphinx build commands for Unix-like systems
-│   ├── make.bat            # Sphinx build commands for Windows
-│   ├── requirements.txt    # Python documentation dependencies
-│   ├── source/
-│   │   ├── conf.py         # Sphinx configuration
-│   │   ├── index.rst       # Documentation landing page and navigation
-│   │   ├── quick-start/    # Getting-started guides
-│   │   ├── scripting/      # FooScript reference
-│   │   └── searching/      # Query-language reference
-│   └── build/              # Generated documentation (not committed)
-└── LICENSE
-```
-
 ## Deployment
 
 Changes pushed to the `master` branch are automatically built and published by **Read the Docs**.

@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'fooyin'
-copyright = '2024, Luke Taylor'
+copyright = '2024-2026, Luke Taylor'
 author = 'ludouzi'
 
 release = '0.1'
