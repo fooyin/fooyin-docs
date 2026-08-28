@@ -1,3 +1,309 @@
+:root {
+    color-scheme: dark;
+
+    --fooyin-background: #111719;
+    --fooyin-surface: #161d20;
+    --fooyin-text: #cbd2d2;
+    --fooyin-heading: #edf0ef;
+    --fooyin-link: #58a6c8;
+    --fooyin-link-hover: #82bdd6;
+    --fooyin-amber: #f5a623;
+    --fooyin-amber-dark: #ffb83d;
+    --fooyin-border: #394449;
+    --fooyin-sidebar: #111719;
+    --fooyin-sidebar-header: #1b2428;
+    --fooyin-sidebar-surface: #242a2d;
+    --fooyin-sidebar-border: #394449;
+    --fooyin-sidebar-text: #cbd2d2;
+    --fooyin-sidebar-heading: #ffb83d;
+    --fooyin-button-hover: #242a2d;
+    --fooyin-info-background: #172a31;
+    --fooyin-warning-background: #2b2418;
+    --fooyin-warning-title: #8a5109;
+    --fooyin-row-alternate: #1b2326;
+    --fooyin-footer: #8f999b;
+    --fooyin-code-background: #1b2326;
+    --fooyin-code-text: #d8dede;
+    --fooyin-inline-code: #242a2d;
+}
+
+body,
+.wy-body-for-nav,
+.wy-nav-content-wrap {
+    background: var(--fooyin-background);
+    color: var(--fooyin-text);
+}
+
+.wy-nav-content {
+    background: var(--fooyin-surface);
+}
+
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+    color: var(--fooyin-heading);
+}
+
+a,
+.rst-content a code,
+.rst-content a tt {
+    color: var(--fooyin-link);
+}
+
+a:hover,
+.rst-content a:hover code,
+.rst-content a:hover tt {
+    color: var(--fooyin-link-hover);
+}
+
+.wy-nav-side {
+    background: var(--fooyin-sidebar);
+    color: var(--fooyin-sidebar-text);
+}
+
+.wy-side-nav-search,
+.wy-nav-top {
+    background: var(--fooyin-sidebar-header);
+}
+
+.wy-side-nav-search {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.wy-side-nav-search input[type="text"] {
+    background: var(--fooyin-surface);
+    border-color: var(--fooyin-sidebar-border);
+    color: var(--fooyin-text);
+}
+
+.wy-side-nav-search input[type="text"]:focus {
+    border-color: var(--fooyin-amber);
+    box-shadow: 0 0 0 2px rgb(233 145 22 / 30%);
+}
+
+.wy-menu-vertical p.caption {
+    color: var(--fooyin-sidebar-heading);
+}
+
+.wy-menu-vertical a,
+.wy-menu-vertical li ul li a {
+    color: var(--fooyin-sidebar-text);
+}
+
+.wy-menu-vertical a:hover,
+.wy-menu-vertical li.current ul a:hover {
+    background: var(--fooyin-sidebar-surface) !important;
+    color: #edf0ef !important;
+}
+
+.wy-menu-vertical a:active {
+    background: var(--fooyin-amber);
+    color: #211a10;
+}
+
+.wy-menu-vertical li.current {
+    background: #172024;
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on > a {
+    background: var(--fooyin-sidebar-surface) !important;
+    border-color: var(--fooyin-sidebar-border);
+    border-right: 3px solid var(--fooyin-amber);
+    color: var(--fooyin-sidebar-heading) !important;
+}
+
+.wy-menu-vertical li.current ul a {
+    background: #172024 !important;
+    color: var(--fooyin-sidebar-text) !important;
+}
+
+.wy-menu-vertical li.current ul li.current > a {
+    background: var(--fooyin-sidebar-surface) !important;
+    color: var(--fooyin-sidebar-heading) !important;
+}
+
+.wy-menu-vertical li button.toctree-expand,
+.wy-menu-vertical li.current > a button.toctree-expand,
+.wy-menu-vertical li.on a button.toctree-expand {
+    color: inherit;
+}
+
+.wy-breadcrumbs a,
+.wy-breadcrumbs a:visited {
+    color: var(--fooyin-link);
+}
+
+.btn-neutral,
+.btn-neutral:visited {
+    background: var(--fooyin-surface) !important;
+    border-color: var(--fooyin-border) !important;
+    color: var(--fooyin-text) !important;
+}
+
+.btn-neutral:hover,
+.btn-neutral:focus {
+    background: var(--fooyin-button-hover) !important;
+    color: var(--fooyin-heading) !important;
+}
+
+.rst-content .note,
+.rst-content .seealso,
+.rst-content .wy-alert-info {
+    background: var(--fooyin-info-background);
+}
+
+.rst-content .note .admonition-title,
+.rst-content .seealso .admonition-title,
+.rst-content .wy-alert-info .wy-alert-title {
+    background: var(--fooyin-link);
+}
+
+.rst-content .warning,
+.rst-content .caution,
+.rst-content .attention,
+.rst-content .wy-alert-warning {
+    background: var(--fooyin-warning-background);
+    color: var(--fooyin-text);
+}
+
+.rst-content .warning .admonition-title,
+.rst-content .caution .admonition-title,
+.rst-content .attention .admonition-title,
+.rst-content .wy-alert-warning .wy-alert-title {
+    background: var(--fooyin-warning-title);
+    color: var(--fooyin-heading);
+}
+
+.rst-content div[class^="highlight"],
+.rst-content pre.literal-block,
+.rst-content .sidebar {
+    border-color: var(--fooyin-border);
+}
+
+.rst-content div[class^="highlight"],
+.rst-content pre.literal-block,
+.rst-content .sidebar,
+.rst-content .sidebar .sidebar-title {
+    background: var(--fooyin-code-background);
+    color: var(--fooyin-code-text);
+}
+
+.rst-content code,
+.rst-content tt {
+    background: var(--fooyin-inline-code);
+    color: var(--fooyin-code-text);
+}
+
+.rst-content table.docutils th,
+.rst-content table.docutils td {
+    border-color: var(--fooyin-border);
+    color: var(--fooyin-text);
+}
+
+.rst-content table.docutils th {
+    background: var(--fooyin-sidebar);
+    color: var(--fooyin-heading);
+}
+
+.rst-content table.docutils:not(.field-list) tbody tr td {
+    background: var(--fooyin-surface) !important;
+}
+
+.rst-content table.docutils:not(.field-list) tbody tr:nth-child(odd) td {
+    background: var(--fooyin-row-alternate) !important;
+}
+
+footer,
+footer p,
+footer span {
+    color: var(--fooyin-footer);
+}
+
+.highlight {
+    background: var(--fooyin-code-background);
+    color: var(--fooyin-code-text);
+}
+
+.highlight .c,
+.highlight .ch,
+.highlight .cm,
+.highlight .cpf,
+.highlight .c1 {
+    color: #ababab;
+}
+
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .nt,
+.highlight .ow {
+    color: #8fcf61;
+}
+
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il {
+    color: #6bb8e8;
+}
+
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .ss {
+    color: #f5b14a;
+}
+
+.highlight .n,
+.highlight .na,
+.highlight .nb,
+.highlight .nc,
+.highlight .no,
+.highlight .nd,
+.highlight .ni,
+.highlight .ne,
+.highlight .nf,
+.highlight .nl,
+.highlight .nn,
+.highlight .nx,
+.highlight .py,
+.highlight .nv,
+.highlight .bp,
+.highlight .fm,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .vm {
+    color: #d8dede;
+}
+
+.highlight .o,
+.highlight .p {
+    color: var(--fooyin-code-text);
+}
+
 /*
  * The Read the Docs theme defaults to an 800px content column, which is too
  * narrow for the reference tables used throughout these docs.
@@ -8,6 +314,6 @@
 
 .rst-content table.scripting-variables tbody td:first-child code.literal,
 .rst-content table.scripting-functions tbody td:first-child code.literal,
-.rst-content table.scripting-formatting tbody td:first-child code.literal{
+.rst-content table.scripting-formatting tbody td:first-child code.literal {
     font-size: 1rem;
 }
