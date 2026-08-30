@@ -17,9 +17,12 @@
     --fooyin-sidebar-text: #cbd2d2;
     --fooyin-sidebar-heading: #ffb83d;
     --fooyin-button-hover: #242a2d;
-    --fooyin-info-background: #172a31;
-    --fooyin-warning-background: #2b2418;
-    --fooyin-warning-title: #8a5109;
+    --fooyin-admonition-background: #1b2326;
+    --fooyin-admonition-title-background: #202a2e;
+    --fooyin-info: #58a6c8;
+    --fooyin-success: #72b58b;
+    --fooyin-warning: #f5a623;
+    --fooyin-danger: #d96a6a;
     --fooyin-row-alternate: #1b2326;
     --fooyin-footer: #8f999b;
     --fooyin-code-background: #1b2326;
@@ -53,7 +56,15 @@ a,
     color: var(--fooyin-link);
 }
 
+a:visited,
+.rst-content a:visited,
+.rst-content a:visited code,
+.rst-content a:visited tt {
+    color: var(--fooyin-link);
+}
+
 a:hover,
+.rst-content a:hover,
 .rst-content a:hover code,
 .rst-content a:hover tt {
     color: var(--fooyin-link-hover);
@@ -151,32 +162,69 @@ a:hover,
     color: var(--fooyin-heading) !important;
 }
 
+.rst-content .admonition,
+.rst-content .wy-alert {
+    background: var(--fooyin-admonition-background);
+    border: 1px solid var(--fooyin-border);
+    border-left-width: 4px;
+    border-radius: 2px;
+    box-shadow: none;
+    color: var(--fooyin-text);
+}
+
+.rst-content .admonition .admonition-title,
+.rst-content .wy-alert .wy-alert-title {
+    background: var(--fooyin-admonition-title-background);
+    border-bottom: 1px solid var(--fooyin-border);
+    color: var(--fooyin-heading);
+}
+
 .rst-content .note,
 .rst-content .seealso,
 .rst-content .wy-alert-info {
-    background: var(--fooyin-info-background);
+    border-left-color: var(--fooyin-info);
 }
 
 .rst-content .note .admonition-title,
 .rst-content .seealso .admonition-title,
 .rst-content .wy-alert-info .wy-alert-title {
-    background: var(--fooyin-link);
+    color: var(--fooyin-link-hover);
+}
+
+.rst-content .tip,
+.rst-content .hint {
+    border-left-color: var(--fooyin-success);
+}
+
+.rst-content .tip .admonition-title,
+.rst-content .hint .admonition-title {
+    color: var(--fooyin-success);
 }
 
 .rst-content .warning,
 .rst-content .caution,
 .rst-content .attention,
+.rst-content .important,
 .rst-content .wy-alert-warning {
-    background: var(--fooyin-warning-background);
-    color: var(--fooyin-text);
+    border-left-color: var(--fooyin-warning);
 }
 
 .rst-content .warning .admonition-title,
 .rst-content .caution .admonition-title,
 .rst-content .attention .admonition-title,
+.rst-content .important .admonition-title,
 .rst-content .wy-alert-warning .wy-alert-title {
-    background: var(--fooyin-warning-title);
-    color: var(--fooyin-heading);
+    color: var(--fooyin-amber-dark);
+}
+
+.rst-content .danger,
+.rst-content .error {
+    border-left-color: var(--fooyin-danger);
+}
+
+.rst-content .danger .admonition-title,
+.rst-content .error .admonition-title {
+    color: var(--fooyin-danger);
 }
 
 .rst-content div[class^="highlight"],
