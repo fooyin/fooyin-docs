@@ -80,7 +80,7 @@ Next Steps
 * Organise listening sessions with
   :doc:`../playlists/working-with-playlists` and
   :doc:`../playlists/playback-queue`.
-* Learn the query language in :doc:`../searching/basics`.
+* Learn the query language in :doc:`../library/searching-library`.
 * Use :doc:`../scripting/basics` to customise text shown by compatible widgets.
 * Learn how to share and back up layouts in
   :doc:`importing-exporting-layouts`.

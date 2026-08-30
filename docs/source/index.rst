@@ -31,6 +31,8 @@ It's highly extensible with a plugin system and includes FooScript, a scripting 
    :caption: Library
 
    library/managing-library
+   library/browsing-library
+   library/searching-library
 
 .. toctree::
    :hidden:
@@ -51,10 +53,3 @@ It's highly extensible with a plugin system and includes FooScript, a scripting 
    scripting/functions
    scripting/regular-expressions
    scripting/formatting
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-   :caption: Searching
-
-   searching/basics

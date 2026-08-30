@@ -15,7 +15,7 @@ Tabs, Playlist Manager, or Playlist Organiser. Enter:
 * **Sort**, which orders matching tracks.
 * **Force-sorted**, which controls whether the complete list is reordered when it regenerates.
 
-Both the name and query are required. See :doc:`../searching/basics` for query
+Both the name and query are required. See :doc:`../library/searching-library` for query
 operators, dates, sorting, and limits.
 
 .. image:: img/create-autoplaylist.webp
