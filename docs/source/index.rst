@@ -1,16 +1,21 @@
-Welcome to fooyin's documentation!
-==================================
+fooyin Documentation
+====================
 
-**fooyin** is a music player built around customisation.
-It provides a variety of widgets to help you manage and play your local collection.
-It's highly extensible with a plugin system and includes FooScript, a scripting language for advanced configuration of widgets.
+fooyin is a customisable music player for managing and playing a local music collection.
+Its interface is built from configurable widgets, while playlists, library tools, metadata editing,
+audio processing, and scripting provide control over how a collection is organised and played.
 
-.. Check out the :doc:`usage` section for further information, including
-.. how to :ref:`installation` the project.
+New to fooyin? Start with the :doc:`Quick Start <quick-start/quick-start>`.
+It covers the first launch, adding a music library, playing tracks, creating a playlist,
+and making an initial layout change.
 
 .. note::
 
    This project is under active development.
+
+.. image:: quick-start/img/interface.webp
+   :alt: The main fooyin interface
+   :align: center
 
 .. toctree::
    :hidden:
