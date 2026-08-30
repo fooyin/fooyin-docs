@@ -20,8 +20,26 @@ It's highly extensible with a plugin system and includes FooScript, a scripting 
    quick-start/quick-start
    quick-start/adding-files
    quick-start/interface
+   quick-start/understanding-layouts
    quick-start/layout-editing-mode
+   quick-start/managing-layouts
    quick-start/importing-exporting-layouts
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: Library
+
+   library/managing-library
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: Playlists
+
+   playlists/working-with-playlists
+   playlists/autoplaylists
+   playlists/playback-queue
 
 .. toctree::
    :hidden:
