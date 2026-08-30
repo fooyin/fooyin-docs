@@ -1,184 +1,247 @@
-Searching
-=======================
+Searching and Query Syntax
+==========================
 
-Advanced searching can be carried out using a case-insensitive query-based language. It builds on the normal scripting syntax, offering more advanced filtering capabilities with operators, keywords, and logical grouping. The same query language is used to define autoplaylists.
+fooyin can search the library using ordinary text or structured queries. Plain
+text is suitable when you know part of an artist, album, title, or another
+searchable field. Queries are useful when you want to search a particular
+field, compare values, combine conditions, sort results, or limit their number.
 
-Operators
-----------
+The same query syntax is available in the full library search, Quick Search,
+Search Bar widgets, and autoplaylists.
 
-Operators are used to compare metadata fields against values. Each operator has a specific meaning, and some have equivalent keywords for convenience.
+Quick Examples
+--------------
 
 .. list-table::
-   :widths: 10 20 30 20  
+   :widths: 45 55
+   :header-rows: 1
+
+   * - Find
+     - Search
+   * - Words in searchable metadata
+     - ``radiohead moon``
+   * - An exact phrase
+     - ``"dark side of the moon"``
+   * - Tracks by an artist
+     - ``artist : radiohead``
+   * - Tracks rated four stars or higher
+     - ``rating >= 4``
+   * - Tracks without lyrics
+     - ``lyrics MISSING``
+   * - Tracks added during the last two weeks
+     - ``addedtime DURING LAST 2 WEEKS``
+   * - Recent jazz tracks
+     - ``genre = jazz AND addedtime DURING LAST MONTH``
+
+Plain Text Searches
+-------------------
+
+A plain text search checks the fields configured under
+``Edit -> Settings -> Library -> Searching -> General``. By default these
+include the artist, title, album, album artist, performer, composer, genre,
+comment, and file path.
+
+All words must match, but they do not need to occur in the same field or order.
+For example, ``radiohead bends`` can match an artist of "Radiohead" and an album
+of "The Bends". Enclose text in double quotes when the complete phrase must
+occur together:
+
+``"wish you were here"``
+
+Text matching ignores case and accents. The default search mode matches the
+beginnings of words, so ``light`` matches "Light", but not "Moonlight". Change
+**Search mode** to **Match anywhere** in the search settings if you want both to
+match. These settings affect plain text searches, not field-based query
+expressions.
+
+Searching Fields
+----------------
+
+Use a field name followed by an operator and a value:
+
+``artist : miles davis``
+
+Field names can be written with or without percent signs, so ``artist`` and
+``%artist%`` are equivalent in a query. Custom metadata fields can be searched
+the same way. See :doc:`../scripting/variables` for the built-in fields.
+
+String comparisons ignore case and accents. Use ``:`` to find a value anywhere
+within a field and ``=`` to require the complete field value:
+
+.. list-table::
+   :widths: 18 27 35 20
    :header-rows: 1
 
    * - Operator
      - Syntax
-     - Description
-     - Keyword Equivalent
-   * - `:`  
-     - `field : string`  
-     - Field contains the given string  
-     - `HAS`  
-   * - `=`  
-     - `field = string`  
-     - Field is exactly equal to the given string  
-     - `IS`  
-   * - `!=`  
-     - `field != string`  
-     - Field is not equal to the given string  
-     -  
-   * - `>`  
-     - `field > number`  
-     - Field is greater than the given number  
-     - `GREATER`  
-   * - `<`  
-     - `field < number`  
-     - Field is less than the given number  
-     - `LESS`  
-   * - `>=`  
-     - `field >= number`  
-     - Field is greater than or equal to the given number  
-     -  
-   * - `<=`  
-     - `field <= number`  
-     - Field is less than or equal to the given number  
-     -  
-   * - `!`  
-     - `!expression`  
-     - Expression is negated (not true)  
-     - `NOT`  
+     - Meaning
+     - Keyword form
+   * - ``:``
+     - ``field : value``
+     - Field contains the value
+     - ``HAS``
+   * - ``=``
+     - ``field = value``
+     - Field equals the value
+     - ``IS``
+   * - ``!=``
+     - ``field != value``
+     - Field does not equal the value
+     - ``NOT =``
+   * - ``>``
+     - ``field > number``
+     - Field is greater than the number
+     - ``GREATER``
+   * - ``<``
+     - ``field < number``
+     - Field is less than the number
+     - ``LESS``
+   * - ``>=``
+     - ``field >= number``
+     - Field is greater than or equal to the number
+     -
+   * - ``<=``
+     - ``field <= number``
+     - Field is less than or equal to the number
+     -
 
-Keywords
----------
+Keyword forms and logical keywords must be uppercase. These searches are
+equivalent:
 
-Keywords allow more complex filtering by defining conditions, grouping expressions, and sorting results.
+.. code-block:: text
 
-.. list-table::  
-   :widths: 10 40 50  
-   :header-rows: 1
+   artist : radiohead
+   artist HAS radiohead
 
-   * - Keyword  
-     - Syntax  
-     - Description  
-   * - `PRESENT`  
-     - `field PRESENT`  
-     - Returns tracks with the given metadata field  
-   * - `MISSING`  
-     - `field MISSING`  
-     - Returns tracks missing the given metadata field  
-   * - `BEFORE`  
-     - `time1 BEFORE time2`  
-     - Tracks where `time1` is before `time2`  
-   * - `AFTER`  
-     - `time1 AFTER time2`  
-     - Tracks where `time1` is after `time2`  
-   * - `SINCE`  
-     - `time1 SINCE time2`  
-     - Tracks where `time1` is at or after `time2`  
-   * - `DURING`  
-     - `time1 DURING time2`  
-     - Tracks where `time1` falls within `time2`  
-   * - `AND`  
-     - `expression1 AND expression2`  
-     - Tracks where both expressions are true  
-   * - `OR`  
-     - `expression1 OR expression2`  
-     - Tracks where at least one expression is true  
-   * - `XOR`  
-     - `expression1 XOR expression2`  
-     - Tracks where exactly one expression is true  
-   * - `ALL`  
-     - `ALL`  
-     - Returns all tracks  
-   * - `SORT BY`  
-     - `SORT BY expression`  
-     - Sort tracks in ascending order by the given expression  
-   * - `SORT ASCENDING BY`  
-     - `SORT ASCENDING BY expression`  
-     - Equivalent to `SORT BY`  
-   * - `SORT DESCENDING BY`  
-     - `SORT DESCENDING BY expression`  
-     - Sort tracks in descending order by the given expression  
-   * - `SORT+`
-     - `SORT+ expression`
-     - Shorthand for `SORT ASCENDING BY expression`
-   * - `SORT-`
-     - `SORT- expression`
-     - Shorthand for `SORT DESCENDING BY expression`
-   * - `LIMIT`
-     - `LIMIT number`
-     - Return no more than the given number of tracks
+Use numeric fields with ``>``, ``<``, ``>=``, or ``<=``. For example:
 
-Sort Shorthand
---------------
+.. code-block:: text
 
-The `+` and `-` suffixes provide compact forms for choosing the sort direction:
+   playcount > 10
+   rating >= 4
+   bitrate >= 1000
+
+Present and Missing Fields
+--------------------------
+
+Use ``PRESENT`` and ``MISSING`` to test whether a field has a value:
+
+.. code-block:: text
+
+   lyrics PRESENT
+   composer MISSING
+
+They can also be negated:
+
+.. code-block:: text
+
+   lyrics NOT PRESENT
+   composer NOT MISSING
+
+Combining Conditions
+--------------------
+
+Use the uppercase keywords ``AND``, ``OR``, and ``XOR`` to combine conditions:
+
+.. code-block:: text
+
+   genre = jazz AND rating >= 4
+   artist : miles davis OR artist : john coltrane
+   lyrics PRESENT XOR comment PRESENT
+
+``XOR`` matches when exactly one of its two conditions is true. Use ``NOT`` or
+``!`` to negate a condition:
+
+.. code-block:: text
+
+   NOT genre = classical
+   !lyrics PRESENT
+   genre NOT = pop
+
+Use parentheses to make grouping explicit when mixing logical operators:
+
+``(playcount > 0 AND genre = rock) OR title : rock``
+
+This finds played tracks whose genre is exactly "rock", together with any track
+whose title contains "rock". A complete group can also be negated:
+
+``!(playcount > 1 AND genre = classical)``
+
+Date Searches
+-------------
+
+Use date operators with fields such as ``date``, ``addedtime``,
+``firstplayed``, ``lastplayed``, ``createdtime``, and ``lastmodified``.
 
 .. list-table::
-   :widths: 30 70
+   :widths: 20 35 45
    :header-rows: 1
 
-   * - Shorthand
-     - Equivalent long form
-   * - `SORT+ playcount`
-     - `SORT ASCENDING BY playcount`
-   * - `SORT- playcount`
-     - `SORT DESCENDING BY playcount`
+   * - Keyword
+     - Example
+     - Meaning
+   * - ``BEFORE``
+     - ``date BEFORE 2000``
+     - Earlier than the given date
+   * - ``AFTER``
+     - ``addedtime AFTER 2025-01-01``
+     - Later than the given date
+   * - ``SINCE``
+     - ``firstplayed SINCE 2025-01-01``
+     - On or after the given date
+   * - ``DURING``
+     - ``lastplayed DURING 2025-08``
+     - Within the given period
 
-The expression after `SORT+` or `SORT-` can be any supported scripting
-expression, just as it can with the long forms.
+``DURING`` uses the precision of the supplied value. It can select a year,
+month, day, hour, minute, or second:
 
-Grouping Expressions
----------------------
+.. code-block:: text
 
-Expressions can be grouped using parentheses `()` to control the order of operations. For example:
+   addedtime DURING 2025
+   addedtime DURING 2025-08
+   addedtime DURING 2025-08-30
+   addedtime DURING "2025-08-30 14:30"
 
-`(playcount > 0 AND genre = rock) OR title : rock`
+For a rolling period ending at the current time, use ``DURING LAST`` with an
+optional positive count. Supported units are seconds, minutes, hours, days,
+weeks, months, and years:
 
-This query returns tracks where either:
+.. code-block:: text
 
-- The play count is greater than 0 **and** the genre is "rock",  
-- **Or** the title contains the word "rock".  
+   lastplayed DURING LAST WEEK
+   addedtime DURING LAST 14 DAYS
+   firstplayed DURING LAST 3 MONTHS
 
-Negation of groups is also possible using the `!` (not) operator:
+Sorting and Limiting Results
+----------------------------
 
-`!(playcount > 1 AND genre = classical)`
+Append a sort expression to order search results. ``SORT BY`` sorts in
+ascending order; use ``SORT DESCENDING BY`` for descending order:
 
-This query returns all tracks **except** those where:
+.. code-block:: text
 
-- The play count is greater than 1 **and** the genre is "classical".
+   ALL SORT BY %artist%
+   playcount > 0 SORT DESCENDING BY %playcount%
 
-Examples
---------------
+The compact forms ``SORT+`` and ``SORT-`` select ascending and descending order
+respectively:
 
-1. Find all tracks with a play count greater than 10: 
-   
-    `playcount > 10`
+.. code-block:: text
 
-2. Tracks where the genre is "jazz" but not "pop": 
-   
-    `genre = jazz AND genre != pop`
+   SORT+ artist
+   SORT- playcount
 
-3. Tracks released since 2020, sorted by play count in descending order:
+The sort value can be a field name or another supported FooScript expression.
+Use ``LIMIT`` to keep no more than a given number of results:
 
-    `date SINCE 2020 SORT DESCENDING BY %playcount%`
+``playcount > 0 SORT- playcount LIMIT 25``
 
-4. The 25 most-played tracks:
-
-    `playcount > 0 SORT DESCENDING BY %playcount% LIMIT 25`
+``ALL`` matches every track and is useful when a query only needs to sort or
+limit the library.
 
 Autoplaylists
 -------------
 
-Autoplaylists use the same filtering language in their **Query** field, including
-the `LIMIT` keyword. For example, this query keeps an autoplaylist to 25 tracks:
-
-`playcount > 0 LIMIT 25`
-
-Use the autoplaylist's **Sort** field to choose which matching tracks are retained
-when a limit is applied. For the 25 most-played tracks, enter
-`playcount > 0 LIMIT 25` in **Query** and `SORT- playcount` in **Sort**.
-Here, `SORT- playcount` is shorthand for
-`SORT DESCENDING BY playcount`, so the tracks with the highest play counts are
-retained.
+Autoplaylists provide separate **Query** and **Sort** fields.
+See :doc:`../playlists/autoplaylists` for how filtering, ordering, and limits interact.
