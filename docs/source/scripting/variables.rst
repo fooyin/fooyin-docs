@@ -19,8 +19,8 @@ Metadata
      - Track title. If missing, the filename is returned instead
    * - ``%artist%``
      - Artists. If missing, Album Artist, Composer, and Performer are checked
-   * - ``%uniqueartist%``
-     - Unique artists not present in album artists
+   * - ``%trackartist%``
+     - Track artists not present in album artists. Empty when no album artist is tagged.
    * - ``%album%``
      - Album title
    * - ``%albumartist%``
