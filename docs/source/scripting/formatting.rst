@@ -20,6 +20,10 @@ tag. For example, ``<b>Bold</b> Text`` applies bold formatting only to the word
      - **Bold**: Applies bold formatting to the text
    * - ``<i>``
      - **Italic**: Applies italic formatting to the text
+   * - ``<u>``
+     - **Underline**: Underlines the text
+   * - ``<s>``
+     - **Strikethrough**: Strikes through the text
    * - ``<font=name>``
      - **Font Family**: Sets the font family for the text to ``name``
    * - ``<size=n>``
@@ -32,3 +36,7 @@ tag. For example, ``<b>Bold</b> Text`` applies bold formatting only to the word
      - **Color RGB**: Sets the color of the text (RGB)
    * - ``<rgb=r,g,b,a>``
      - **Color RGBA**: Sets the color of the text (RGBA)
+   * - ``<rgba=r,g,b,a>``
+     - **Color RGBA Alias**: Sets the color of the text (RGBA)
+   * - ``<color=value>``
+     - **Color**: Sets the text color from a named color or hexadecimal value

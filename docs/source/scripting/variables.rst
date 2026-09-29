@@ -21,6 +21,8 @@ Metadata
      - Artists. If missing, Album Artist, Composer, and Performer are checked
    * - ``%trackartist%``
      - Track artists not present in album artists. Empty when no album artist is tagged.
+   * - ``%uniqueartist%``
+     - Alias for ``%trackartist%``
    * - ``%album%``
      - Album title
    * - ``%albumartist%``
@@ -78,7 +80,11 @@ Metadata
    * - ``%rating_stars_padded%``
      - Rating shown as stars with trailing empty stars
    * - ``%rating_editor%``
-     - Rating editor representation
+     - Interactive star editor for rating
+   * - ``%loved%``
+     - Returns 1 when the track is loved; otherwise returns nothing
+   * - ``%love_editor%``
+     - Interactive heart editor for the loved flag
    * - ``%codec%``
      - Codec name. If missing, the file extension is returned instead
    * - ``%codec_profile%``
@@ -125,6 +131,37 @@ Metadata
      - ReplayGain album peak
    * - ``%replaygain_album_peak_db%``
      - ReplayGain album peak in dB
+
+Metadata aliases
+----------------
+
+The following common names are accepted as aliases for metadata variables:
+
+.. list-table::
+   :class: scripting-variables
+   :widths: 35 65
+   :header-rows: 1
+
+   * - **Aliases**
+     - **Equivalent variable**
+   * - ``%tracknumber%``, ``%track number%``
+     - ``%track%``
+   * - ``%totaltracks%``
+     - ``%tracktotal%``
+   * - ``%discnumber%``
+     - ``%disc%``
+   * - ``%totaldiscs%``
+     - ``%disctotal%``
+   * - ``%track artist%``
+     - ``%trackartist%``
+   * - ``%album artist%``
+     - ``%albumartist%``
+   * - ``%play_count%``
+     - ``%playcount%``
+   * - ``%length%``
+     - ``%duration%``
+   * - ``%length_seconds%``
+     - ``%duration_s%``
 
 Playlist
 --------
@@ -186,12 +223,45 @@ These variables are available in playback-aware contexts such as the status bar.
      - Remaining playback time formatted as ``[HH:]mm:ss``
    * - ``%playback_time_remaining_s%``
      - Remaining playback time in seconds
+   * - ``%input_decoder%``
+     - Input decoder backend used for the current playing track
+   * - ``%output_samplerate%``
+     - Sample rate entering the active output
+   * - ``%output_channels%``
+     - Number of channels entering the active output
+   * - ``%output_channel_mask%``
+     - Channel layout entering the active output
+   * - ``%output_bitdepth%``
+     - Bit depth used by the active output
+   * - ``%output_device%``
+     - Active output device
+   * - ``%output_dsps%``
+     - Enabled DSPs in processing order
+   * - ``%output_dsp_preset%``
+     - Explicitly selected DSP chain preset
+   * - ``%output_volume%``
+     - Playback volume in dB
+   * - ``%output_rg_source%``
+     - Active ReplayGain source mode
+   * - ``%output_rg_mode%``
+     - Active ReplayGain processing mode
+   * - ``%output_rg_gain%``
+     - Effective ReplayGain adjustment in dB
+   * - ``%output_rg_peak%``
+     - Effective ReplayGain peak
+   * - ``%output_rg_peak_db%``
+     - Effective ReplayGain peak in dBFS
+   * - ``%output_buffer_length%``
+     - Active output buffer length in milliseconds
    * - ``%isplaying%``
      - Returns 1 while playback is active
    * - ``%ispaused%``
      - Returns 1 while playback is paused
    * - ``%isstopped%``
      - Returns 1 while playback is stopped
+
+``%playback_time_seconds%`` and ``%playback_time_remaining_seconds%`` are
+aliases for ``%playback_time_s%`` and ``%playback_time_remaining_s%``.
 
 Library and system
 ------------------
@@ -209,3 +279,5 @@ Library and system
      - Current library path
    * - ``%datetime%``
      - Current date and time formatted as ``YYYY-MM-DD HH:MM:SS``
+   * - ``%_fooyin_version%``
+     - Current fooyin version

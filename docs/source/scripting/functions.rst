@@ -70,6 +70,8 @@ examples, and performance guidance.
      - Removes characters from the end
    * - ``$left(text,count)``
      - Returns characters from the left
+   * - ``$cut(text,count)``
+     - Alias for ``$left``
    * - ``$right(text,count)``
      - Returns characters from the right
    * - ``$insert(text,insert[,pos])``
@@ -77,21 +79,27 @@ examples, and performance guidance.
    * - ``$substr(text,start,end)``
      - Returns a substring
    * - ``$strstr(text,needle[,start])``
-     - Finds a substring position
+     - Finds the first substring position using a 1-based index
    * - ``$stristr(text,needle[,start])``
-     - Finds a substring position, ignoring case
+     - Finds the first substring position using a 1-based index, ignoring case
    * - ``$strstrlast(text,needle[,start])``
-     - Finds the last substring position
+     - Finds the last substring position using a 1-based index
    * - ``$stristrlast(text,needle[,start])``
-     - Finds the last substring position, ignoring case
-   * - ``$split(text,sep,index)``
-     - Returns one split segment using a 1-based index
+     - Finds the last substring position using a 1-based index, ignoring case
+   * - ``$split(text,sep[,index])``
+     - Splits text into multiple values, or returns one segment using a 1-based index
    * - ``$join(sep,value,…)``
      - Joins non-empty values with a separator
    * - ``$len(text)``
      - Returns the text length
    * - ``$longest(a,b,…)``
      - Returns the longest string
+   * - ``$shortest(a,b,…)``
+     - Returns the first shortest string
+   * - ``$strchr(text,char)``
+     - Finds the first character position using a 1-based index
+   * - ``$strrchr(text,char)``
+     - Finds the last character position using a 1-based index
    * - ``$strcmp(a,b)``
      - Compares two strings for equality
    * - ``$stricmp(a,b)``
@@ -176,6 +184,8 @@ Utility
      - Builds a clickable document or web link
    * - ``$cmdlink(label,id)``
      - Builds a clickable link to a fooyin command
+   * - ``$applink(label,application[,arguments[,directory]])``
+     - Builds a clickable link that launches an application
 
 Time
 ----
@@ -241,6 +251,10 @@ Conditional
      - Returns ``value`` if non-empty; otherwise returns ``fallback``, if provided
    * - ``$if3(a1,a2,…,aN,else)``
      - Returns the first true value from the list, or ``else`` when none match
+   * - ``$select(index,a1,…,aN)``
+     - Returns the value at the one-based index
+   * - ``$greater(x,y)``
+     - Returns true when ``x`` is greater than ``y``
    * - ``$ifgreater(x,y,then,else)``
      - Returns ``then`` when ``x`` is greater than ``y``; otherwise returns ``else``
    * - ``$iflonger(text,length,then,else)``
